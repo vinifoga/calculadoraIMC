@@ -56,7 +56,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Calculadora IMC"),
+        title: const Text("Calculadora IMC"),
         centerTitle: true,
         backgroundColor: Colors.green,
         actions: [
@@ -68,25 +68,25 @@ class _HomeState extends State<Home> {
       ),
       backgroundColor: const Color(0xffe0e0e0),
       body: SingleChildScrollView(
-        padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+        padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
         child: Form(
           key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Icon(
+              const Icon(
                 Icons.person_outline,
                 size: 120,
                 color: Colors.green,
               ),
               TextFormField(
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Peso (kg)",
                   labelStyle: TextStyle(color: Colors.green),
                 ),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.green, fontSize: 25.0),
+                style: const TextStyle(color: Colors.green, fontSize: 25.0),
                 controller: weightController,
                 validator: (value)  {
                   if(value!.isEmpty){
@@ -96,12 +96,12 @@ class _HomeState extends State<Home> {
               ),
               TextFormField(
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Altura (cm)",
                   labelStyle: TextStyle(color: Colors.green),
                 ),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.green, fontSize: 25.0),
+                style: const TextStyle(color: Colors.green, fontSize: 25.0),
                 controller: heightController,
                 validator: (value)  {
                   if(value!.isEmpty){
@@ -111,7 +111,7 @@ class _HomeState extends State<Home> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
-                child: Container(
+                child: SizedBox(
                   height: 50.0,
                   child: ElevatedButton(
                     onPressed: () {
@@ -135,7 +135,7 @@ class _HomeState extends State<Home> {
               Text(
                 _infoText,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.green,
                   fontSize: 25.0,
                 ),
@@ -145,14 +145,5 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
-  }
-}
-
-class inputTextWidget extends StatelessWidget {
-  const inputTextWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
